@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+     <!-- Signature Pad -->
+     <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignaturePad</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background-color: #e6151500;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255, 16, 16, 0);
+            /*padding: 20px;*/
+            border-radius: 15px;
+            /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);*/
+        }
+
+        canvas {
+            border: 2px solid #000;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0);
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .color-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .color-container label {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        #color-picker {
+            width: 50px;
+            height: 40px;
+            border: none;
+            cursor: pointer;
+            background: transparent;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff4d4d;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #cc0000;
+        }
+
+        #saveMessage {
+            margin-top: 10px;
+            font-size: 14px;
+            color: rgba(9, 99, 9, 0.685);
+            font-weight: bold;
+            display: none;
+        }
+
+        #saveBtn {
+            background-color: #6bb812;
+        }
+
+            /*Mobil uyum */
+
+        @media only screen and (max-width: 768px) {
+            canvas {
+                width: 100%;
+                height: 200px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <canvas id="signatureCanvas" width="400" height="200"></canvas>
+
+        <div class="controls">
+            <div class="color-container">
+                <label for="color-picker">Color:</label>
+                <input type="color" id="color-picker" value="#000000">
+            </div>
+            <button id="clearBtn">Clear</button>
+            <button id="saveBtn">Save</button>
+        </div>
+
+        <div id="saveMessage"> Save Successful</div>
+    </div>
+
+    
+
+    <script src="main.js"></script>
+</body>
+
+</html>
